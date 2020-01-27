@@ -201,7 +201,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-title>Gruppe erstellen</ion-title>\n  </ion-toolbar>\n  <ion-buttons>\n    <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n  </ion-buttons>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input placeholder=\"Name der Gruppe\"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beschreibung:</ion-label>\n            <ion-input placeholder=\"Beschreibung der Gruppe\"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-checkbox></ion-checkbox>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n";
+    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-title>Gruppe erstellen</ion-title>\n  </ion-toolbar>\n  <ion-buttons>\n    <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n  </ion-buttons>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input placeholder=\"Name\"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-toggle #event></ion-toggle>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"event.checked\">\n        <ion-col>\n          <ion-item >\n            <ion-label>Ganztägig</ion-label>\n            <ion-toggle #holeDay></ion-toggle>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beginn</ion-label>\n            <ion-datetime [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDate\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Ende</ion-label>\n            <ion-datetime [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDatePlusOne\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item class=\"group-description\" >\n            <ion-textarea placeholder=\"Beschreibung\"></ion-textarea>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n";
     /***/
   },
 
@@ -1290,7 +1290,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZGFscy9jcmVhdGUtZ3JvdXAtbW9kYWwvY3JlYXRlLWdyb3VwLW1vZGFsLmNvbXBvbmVudC5zY3NzIn0= */";
+    __webpack_exports__["default"] = ".group-description {\n  --min-height: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL2NyZWF0ZS1ncm91cC1tb2RhbC9FOlxcUHJvamVjdHNcXHZjYS1hcHBcXEZyb250ZW5kXFx2Y2EtY29tLWFwcC9zcmNcXGFwcFxcbW9kYWxzXFxjcmVhdGUtZ3JvdXAtbW9kYWxcXGNyZWF0ZS1ncm91cC1tb2RhbC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kYWxzL2NyZWF0ZS1ncm91cC1tb2RhbC9jcmVhdGUtZ3JvdXAtbW9kYWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvbW9kYWxzL2NyZWF0ZS1ncm91cC1tb2RhbC9jcmVhdGUtZ3JvdXAtbW9kYWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ3JvdXAtZGVzY3JpcHRpb257XHJcbiAgLS1taW4taGVpZ2h0OiAyNTBweDtcclxufVxyXG4iLCIuZ3JvdXAtZGVzY3JpcHRpb24ge1xuICAtLW1pbi1oZWlnaHQ6IDI1MHB4O1xufSJdfQ== */";
     /***/
   },
 
@@ -1339,6 +1339,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, CreateGroupModalComponent);
 
         this.modalController = modalController;
+        this.nowDate = new Date().toISOString();
+        this.nowDatePlusOne = new Date(Date.now() + 60 * 60 * 1000).toISOString();
       }
 
       _createClass(CreateGroupModalComponent, [{
@@ -2298,17 +2300,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/tslib/tslib.es6.js");
 
     var Channel = function Channel(channelId, name) {
-      var messages = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-
       _classCallCheck(this, Channel);
 
-      this.messages = [];
       this.messageIds = [];
       this.participantIds = [];
       this.currentMessage = '';
       this.id = channelId;
       this.name = name;
-      this.messages = messages;
     };
     /***/
 
@@ -2346,20 +2344,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../enums/group-type.enum */
     "./src/shared/enums/group-type.enum.ts");
 
-    var Group = function Group(guid, name) {
+    var Group = function Group(id, name) {
       var groupType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_1__["GroupType"].Event;
-      var channels = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
 
       _classCallCheck(this, Group);
 
-      this.channels = [];
       this.channelIds = [];
       this.participantIds = [];
       this.description = '';
-      this.id = guid;
+      this.id = id;
       this.groupType = groupType;
       this.name = name;
-      this.channels = channels;
     };
     /***/
 
@@ -2679,13 +2674,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var constUser = new _entities_user__WEBPACK_IMPORTED_MODULE_5__["User"]('e51636d8-2a9d-43bf-8f67-be9c1146ec99', 'ich');
     var constUser2 = new _entities_user__WEBPACK_IMPORTED_MODULE_5__["User"]('df6ed3e6-82ed-4a1b-b75b-d9699d9ce1f5', 'Max');
+    var m1 = [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 1', new Date(Date.now()).getTime(), constUser.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 2', new Date(Date.now()).getTime(), constUser2.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 3', new Date(Date.now()).getTime(), constUser.id)];
+    var m2 = [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()).getTime(), constUser.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()).getTime(), constUser2.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()).getTime(), constUser.id)];
 
-    var channels = _construct(Array, [new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein', [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 1', new Date(Date.now()), constUser.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 2', new Date(Date.now()), constUser2.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 3', new Date(Date.now()), constUser.id)]), new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Drop Treffen', [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()), constUser.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()), constUser2.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()), constUser.id)]), new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Stammtisch', [])]);
+    var channels = _construct(Array, [new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein'), new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Drop Treffen'), new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Stammtisch')]);
 
-    function setParticipanst(channesl, groupId) {
+    channels[0].messageIds = m1.map(function (x) {
+      return x.id;
+    });
+    channels[1].messageIds = m2.map(function (x) {
+      return x.id;
+    });
+
+    function setParticipanst(channesl, messages, groupId) {
       channesl.forEach(function (x) {
         var userIds = new Set();
-        x.messages.forEach(function (m) {
+        messages.forEach(function (m) {
           return userIds.add(m.userId);
         });
         x.participantIds = Array.from(userIds.values());
@@ -2693,19 +2697,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       });
     }
 
-    var group2Channels = [new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein', [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()), constUser.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()), constUser2.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()), constUser.id)])];
-    var group = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCA Karlsruhe', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].Event, channels);
+    var m3 = [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()).getTime(), constUser.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()).getTime(), constUser2.id), new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()).getTime(), constUser.id)];
+    var group2Channels = [new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein')];
+    var group = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCA Karlsruhe', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].Event);
     var group2 = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCA Stuttgart', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup);
     var group3Channels = [new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein')];
-    var group3 = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCS St.P', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup, []);
+    var group3 = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCS St.P', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup);
 
     (_group$participantIds = group.participantIds).push.apply(_group$participantIds, [constUser.id, constUser2.id]);
 
     (_group2$participantId = group2.participantIds).push.apply(_group2$participantId, [constUser.id, constUser2.id]);
 
-    setParticipanst(channels, group.id);
-    setParticipanst(group2Channels, group2.id);
-    setParticipanst(group3Channels, group3.id);
+    setParticipanst(channels, m1, group.id);
+    setParticipanst(group2Channels, m2, group2.id);
+    setParticipanst(group3Channels, m3, group3.id);
 
     var AppState =
     /*#__PURE__*/
@@ -2804,7 +2809,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             messages = dataStore.messages.get(state.uiState.currentChannelId);
           }
 
-          dataStore.messages.set(state.uiState.currentChannelId, [].concat(_toConsumableArray(messages), [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.content, new Date(Date.now()), state.uiState.userId)]));
+          dataStore.messages.set(state.uiState.currentChannelId, [].concat(_toConsumableArray(messages), [new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.content, Date.now(), state.uiState.userId)]));
           ctx.patchState({
             dataStore: dataStore
           });
@@ -2875,7 +2880,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return {
               id: message.id,
               content: message.content,
-              timestamp: message.createdOn.getDate(),
+              timestamp: message.createdOn,
               userName: name
             };
           };
@@ -2921,7 +2926,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         dataStore: {
           groups: new Map([[group.id, group], [group2.id, group2], [group3.id, group3]]),
           channels: new Map([[channels[0].id, channels[0]], [channels[1].id, channels[1]], [group2Channels[0].id, group2Channels[0]], [group3Channels[0].id, group3Channels[0]]]),
-          messages: new Map([[channels[0].id, channels[0].messages], [channels[1].id, channels[1].messages], [group2Channels[0].id, group2Channels[0].messages]]),
+          messages: new Map([[channels[0].id, m1], [channels[1].id, m2], [group2Channels[0].id, m3]]),
+          events: new Map(),
           users: new Map([[constUser.id, constUser], [constUser2.id, constUser2]])
         },
         uiState: {

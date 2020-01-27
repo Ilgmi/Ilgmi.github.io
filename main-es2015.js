@@ -456,7 +456,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-title>Gruppe erstellen</ion-title>\n  </ion-toolbar>\n  <ion-buttons>\n    <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n  </ion-buttons>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input placeholder=\"Name der Gruppe\"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beschreibung:</ion-label>\n            <ion-input placeholder=\"Beschreibung der Gruppe\"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-checkbox></ion-checkbox>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-title>Gruppe erstellen</ion-title>\n  </ion-toolbar>\n  <ion-buttons>\n    <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n  </ion-buttons>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input placeholder=\"Name\"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-toggle #event></ion-toggle>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"event.checked\">\n        <ion-col>\n          <ion-item >\n            <ion-label>Ganztägig</ion-label>\n            <ion-toggle #holeDay></ion-toggle>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beginn</ion-label>\n            <ion-datetime [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDate\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Ende</ion-label>\n            <ion-datetime [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDatePlusOne\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item class=\"group-description\" >\n            <ion-textarea placeholder=\"Beschreibung\"></ion-textarea>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n");
 
 /***/ }),
 
@@ -1005,7 +1005,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZGFscy9jcmVhdGUtZ3JvdXAtbW9kYWwvY3JlYXRlLWdyb3VwLW1vZGFsLmNvbXBvbmVudC5zY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".group-description {\n  --min-height: 250px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL2NyZWF0ZS1ncm91cC1tb2RhbC9FOlxcUHJvamVjdHNcXHZjYS1hcHBcXEZyb250ZW5kXFx2Y2EtY29tLWFwcC9zcmNcXGFwcFxcbW9kYWxzXFxjcmVhdGUtZ3JvdXAtbW9kYWxcXGNyZWF0ZS1ncm91cC1tb2RhbC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kYWxzL2NyZWF0ZS1ncm91cC1tb2RhbC9jcmVhdGUtZ3JvdXAtbW9kYWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvbW9kYWxzL2NyZWF0ZS1ncm91cC1tb2RhbC9jcmVhdGUtZ3JvdXAtbW9kYWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ3JvdXAtZGVzY3JpcHRpb257XHJcbiAgLS1taW4taGVpZ2h0OiAyNTBweDtcclxufVxyXG4iLCIuZ3JvdXAtZGVzY3JpcHRpb24ge1xuICAtLW1pbi1oZWlnaHQ6IDI1MHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1028,8 +1028,11 @@ __webpack_require__.r(__webpack_exports__);
 let CreateGroupModalComponent = class CreateGroupModalComponent {
     constructor(modalController) {
         this.modalController = modalController;
+        this.nowDate = new Date().toISOString();
+        this.nowDatePlusOne = new Date(Date.now() + (60 * 60 * 1000)).toISOString();
     }
-    ngOnInit() { }
+    ngOnInit() {
+    }
     createGroup() {
         this.modalController.dismiss({
             dismissed: false
@@ -1586,14 +1589,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Channel {
-    constructor(channelId, name, messages = []) {
-        this.messages = [];
+    constructor(channelId, name) {
         this.messageIds = [];
         this.participantIds = [];
         this.currentMessage = '';
         this.id = channelId;
         this.name = name;
-        this.messages = messages;
     }
 }
 
@@ -1615,15 +1616,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Group {
-    constructor(guid, name, groupType = _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_1__["GroupType"].Event, channels = []) {
-        this.channels = [];
+    constructor(id, name, groupType = _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_1__["GroupType"].Event) {
         this.channelIds = [];
         this.participantIds = [];
         this.description = '';
-        this.id = guid;
+        this.id = id;
         this.groupType = groupType;
         this.name = name;
-        this.channels = channels;
     }
 }
 
@@ -1795,45 +1794,50 @@ __webpack_require__.r(__webpack_exports__);
 
 const constUser = new _entities_user__WEBPACK_IMPORTED_MODULE_5__["User"]('e51636d8-2a9d-43bf-8f67-be9c1146ec99', 'ich');
 const constUser2 = new _entities_user__WEBPACK_IMPORTED_MODULE_5__["User"]('df6ed3e6-82ed-4a1b-b75b-d9699d9ce1f5', 'Max');
+const m1 = [
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 1', new Date(Date.now()).getTime(), constUser.id),
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 2', new Date(Date.now()).getTime(), constUser2.id),
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 3', new Date(Date.now()).getTime(), constUser.id)
+];
+const m2 = [
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()).getTime(), constUser.id),
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()).getTime(), constUser2.id),
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()).getTime(), constUser.id)
+];
 const channels = new Array(...[
-    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein', [
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 1', new Date(Date.now()), constUser.id),
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 2', new Date(Date.now()), constUser2.id),
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Allgemein 3', new Date(Date.now()), constUser.id)
-    ]),
-    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Drop Treffen', [
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()), constUser.id),
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()), constUser2.id),
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()), constUser.id)
-    ]),
-    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Stammtisch', []),
+    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein'),
+    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Drop Treffen'),
+    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Stammtisch'),
 ]);
-function setParticipanst(channesl, groupId) {
+channels[0].messageIds = m1.map(x => x.id);
+channels[1].messageIds = m2.map(x => x.id);
+function setParticipanst(channesl, messages, groupId) {
     channesl.forEach(x => {
         const userIds = new Set();
-        x.messages.forEach(m => userIds.add(m.userId));
+        messages.forEach(m => userIds.add(m.userId));
         x.participantIds = Array.from(userIds.values());
         x.groupId = groupId;
     });
 }
-const group2Channels = [
-    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein', [
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()), constUser.id),
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()), constUser2.id),
-        new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()), constUser.id)
-    ])
+const m3 = [
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 1', new Date(Date.now()).getTime(), constUser.id),
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message Drop Treff 2', new Date(Date.now()).getTime(), constUser2.id),
+    new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Message  Drop Treff 3', new Date(Date.now()).getTime(), constUser.id)
 ];
-const group = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCA Karlsruhe', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].Event, channels);
+const group2Channels = [
+    new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein')
+];
+const group = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCA Karlsruhe', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].Event);
 const group2 = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCA Stuttgart', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup);
 const group3Channels = [
     new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'Allgemein')
 ];
-const group3 = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCS St.P', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup, []);
+const group3 = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), 'VCS St.P', _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup);
 group.participantIds.push(...[constUser.id, constUser2.id]);
 group2.participantIds.push(...[constUser.id, constUser2.id]);
-setParticipanst(channels, group.id);
-setParticipanst(group2Channels, group2.id);
-setParticipanst(group3Channels, group3.id);
+setParticipanst(channels, m1, group.id);
+setParticipanst(group2Channels, m2, group2.id);
+setParticipanst(group3Channels, m3, group3.id);
 let AppState = class AppState {
     constructor() {
     }
@@ -1876,7 +1880,7 @@ let AppState = class AppState {
             return {
                 id: message.id,
                 content: message.content,
-                timestamp: message.createdOn.getDate(),
+                timestamp: message.createdOn,
                 userName: name
             };
         };
@@ -1936,7 +1940,7 @@ let AppState = class AppState {
         const groupToSubscribe = dataStore.groups.get(action.groupId);
         groupToSubscribe.participantIds = [...groupToSubscribe.participantIds, state.uiState.userId];
         ctx.patchState({
-            dataStore: dataStore
+            dataStore
         });
     }
     createLocalGroup(ctx, action) {
@@ -1960,10 +1964,10 @@ let AppState = class AppState {
             messages = dataStore.messages.get(state.uiState.currentChannelId);
         }
         dataStore.messages.set(state.uiState.currentChannelId, [
-            ...messages, new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.content, new Date(Date.now()), state.uiState.userId)
+            ...messages, new _entities_message__WEBPACK_IMPORTED_MODULE_7__["Message"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.content, Date.now(), state.uiState.userId)
         ]);
         ctx.patchState({
-            dataStore: dataStore
+            dataStore
         });
     }
     updateCurrentMessage(ctx, action) {
@@ -2081,10 +2085,11 @@ AppState = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                     [group3Channels[0].id, group3Channels[0]]
                 ]),
                 messages: new Map([
-                    [channels[0].id, channels[0].messages],
-                    [channels[1].id, channels[1].messages],
-                    [group2Channels[0].id, group2Channels[0].messages],
+                    [channels[0].id, m1],
+                    [channels[1].id, m2],
+                    [group2Channels[0].id, m3],
                 ]),
+                events: new Map(),
                 users: new Map([
                     [constUser.id, constUser],
                     [constUser2.id, constUser2],
