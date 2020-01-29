@@ -456,7 +456,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-title>Gruppe erstellen</ion-title>\n  </ion-toolbar>\n  <ion-buttons>\n    <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n  </ion-buttons>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input placeholder=\"Name\"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-toggle #event></ion-toggle>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"event.checked\">\n        <ion-col>\n          <ion-item >\n            <ion-label>Ganztägig</ion-label>\n            <ion-toggle #holeDay></ion-toggle>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beginn</ion-label>\n            <ion-datetime [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDate\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Ende</ion-label>\n            <ion-datetime [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDatePlusOne\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item class=\"group-description\" >\n            <ion-textarea placeholder=\"Beschreibung\"></ion-textarea>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"secondary\">\n      <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n    </ion-buttons>\n    <ion-title>Gruppe erstellen</ion-title>\n    <ion-buttons slot=\"primary\">\n      <ion-button [disabled]=\"createGroupForm.invalid\" (click)=\"createGroup()\">Hinzufügen</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form [formGroup]=\"createGroupForm\">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input placeholder=\"Name\" type=\"text\" formControlName=\"name\"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-toggle #event formControlName=\"isEvent\"></ion-toggle>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"event.checked\" formGroupName=\"event\">\n        <ion-col>\n          <ion-item  >\n            <ion-label>Ganztägig</ion-label>\n            <ion-toggle #holeDay formControlName=\"isWholeDay\"></ion-toggle>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beginn</ion-label>\n            <ion-datetime formControlName=\"from\"\n                          [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDate\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Ende</ion-label>\n            <ion-datetime formControlName=\"to\"\n                          [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDatePlusOne\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item class=\"group-description\" >\n            <ion-textarea formControlName=\"description\" placeholder=\"Beschreibung\"></ion-textarea>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <p>\n            Form: {{ createGroupForm.value | json }}\n          </p>\n          <p>\n            Form Status: {{ createGroupForm.status }}\n          </p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n");
 
 /***/ }),
 
@@ -469,7 +469,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>Einer Gruppe beitreten</ion-title>\r\n  </ion-toolbar>\r\n  <ion-buttons>\r\n    <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\r\n    <ion-button (click)=\"createNewGroup()\">Neue Gruppe erstellen</ion-button>\r\n  </ion-buttons>\r\n</ion-header>\r\n<ion-content fullscreen=\"true\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-searchbar (ionInput)=\"filterList($event)\"></ion-searchbar>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-list>\r\n          <ion-item *ngFor=\"let groupInfo of filteredGroups\">\r\n            <ion-avatar slot=\"start\">\r\n\r\n            </ion-avatar>\r\n            <ion-label>\r\n              <h2>{{groupInfo.name}}</h2>\r\n            </ion-label>\r\n            <ion-button shape=\"round\" fill=\"clear\" size=\"large\" (click)=\"subscribeToGroup(groupInfo.id)\">\r\n              <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent=\"true\">\r\n  <ion-toolbar>\r\n\r\n    <ion-title>Einer Gruppe beitreten</ion-title>\r\n  </ion-toolbar>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"secondary\">\r\n      <ion-button  (click)=\"dismissModal()\">Abbrechen</ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"createNewGroup()\">Neue Gruppe erstellen</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen=\"true\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-searchbar (ionInput)=\"filterList($event)\"></ion-searchbar>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-list>\r\n          <ion-item *ngFor=\"let groupInfo of filteredGroups\">\r\n            <ion-avatar slot=\"start\">\r\n\r\n            </ion-avatar>\r\n            <ion-label>\r\n              <h2>{{groupInfo.name}}</h2>\r\n            </ion-label>\r\n            <ion-button shape=\"round\" fill=\"clear\" size=\"large\" (click)=\"subscribeToGroup(groupInfo.id)\">\r\n              <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -1022,18 +1022,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _ngxs_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngxs/store */ "./node_modules/@ngxs/store/fesm2015/ngxs-store.js");
+/* harmony import */ var _shared_states_app_state_actions_group_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../shared/states/app-state/actions/group.actions */ "./src/shared/states/app-state/actions/group.actions.ts");
+
+
+
 
 
 
 let CreateGroupModalComponent = class CreateGroupModalComponent {
-    constructor(modalController) {
+    constructor(modalController, store) {
         this.modalController = modalController;
-        this.nowDate = new Date().toISOString();
-        this.nowDatePlusOne = new Date(Date.now() + (60 * 60 * 1000)).toISOString();
+        this.store = store;
+        this.createGroupForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
+            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', [
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(100),
+            ]),
+            description: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(250)),
+            isEvent: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](false),
+            event: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
+                isWholeDay: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](true),
+                from: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](new Date().toISOString()),
+                to: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](new Date(Date.now() + (60 * 60 * 1000)).toISOString()),
+            }, this.dateLessThan('from', 'to'))
+        });
     }
     ngOnInit() {
     }
+    dateLessThan(from, to) {
+        return (group) => {
+            const f = new Date(group.get(from).value);
+            const t = new Date(group.get(to).value);
+            console.log(f.getTime(), t.getTime());
+            if (f.getTime() > t.getTime()) {
+                return {
+                    dates: 'Date from should be less than Date to'
+                };
+            }
+        };
+    }
     createGroup() {
+        const group = this.createGroupForm.getRawValue();
+        if (group.isEvent) {
+            const event = group.event;
+            this.store.dispatch(new _shared_states_app_state_actions_group_actions__WEBPACK_IMPORTED_MODULE_5__["CreateEventGroup"](group.name, group.description, event.isWholeDay, event.from, event.to));
+        }
+        else {
+            this.store.dispatch(new _shared_states_app_state_actions_group_actions__WEBPACK_IMPORTED_MODULE_5__["CreateLocalGroup"](group.name, group.description));
+        }
         this.modalController.dismiss({
             dismissed: false
         });
@@ -1045,7 +1083,8 @@ let CreateGroupModalComponent = class CreateGroupModalComponent {
     }
 };
 CreateGroupModalComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"] },
+    { type: _ngxs_store__WEBPACK_IMPORTED_MODULE_4__["Store"] }
 ];
 CreateGroupModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1053,7 +1092,7 @@ CreateGroupModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-group-modal.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modals/create-group-modal/create-group-modal.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-group-modal.component.scss */ "./src/app/modals/create-group-modal/create-group-modal.component.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"], _ngxs_store__WEBPACK_IMPORTED_MODULE_4__["Store"]])
 ], CreateGroupModalComponent);
 
 
@@ -1076,6 +1115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./create-group-modal/create-group-modal.component */ "./src/app/modals/create-group-modal/create-group-modal.component.ts");
 /* harmony import */ var _subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./subscribe-to-group-modal/subscribe-to-group-modal.component */ "./src/app/modals/subscribe-to-group-modal/subscribe-to-group-modal.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
 
 
 
@@ -1093,6 +1134,7 @@ ModalsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"]
         ],
         exports: [
             _subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__["SubscribeToGroupModalComponent"],
@@ -1186,12 +1228,12 @@ let SubscribeToGroupModalComponent = class SubscribeToGroupModalComponent {
             const modal = yield this.modalController.create({
                 component: _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_7__["CreateGroupModalComponent"]
             });
-            modal.onWillDismiss().then(x => {
-                if (!x.data.dismissed) {
-                    this.dismissModal();
-                }
-            });
-            return yield modal.present();
+            yield modal.present();
+            const data = yield modal.onDidDismiss();
+            if (!data.data.dismissed) {
+                yield new Promise(resolve => setTimeout(resolve, 300));
+                this.dismissModal();
+            }
         });
     }
 };
@@ -1697,20 +1739,75 @@ var GroupType;
 
 /***/ }),
 
+/***/ "./src/shared/states/app-state/actions/channel.actions.ts":
+/*!****************************************************************!*\
+  !*** ./src/shared/states/app-state/actions/channel.actions.ts ***!
+  \****************************************************************/
+/*! exports provided: CreateNewChannel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateNewChannel", function() { return CreateNewChannel; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class CreateNewChannel {
+    constructor(name, participantsIds = []) {
+        this.name = name;
+        this.participantsIds = participantsIds;
+    }
+}
+CreateNewChannel.type = '[App State] Create new Channel';
+
+
+/***/ }),
+
+/***/ "./src/shared/states/app-state/actions/group.actions.ts":
+/*!**************************************************************!*\
+  !*** ./src/shared/states/app-state/actions/group.actions.ts ***!
+  \**************************************************************/
+/*! exports provided: CreateEventGroup, CreateLocalGroup */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateEventGroup", function() { return CreateEventGroup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateLocalGroup", function() { return CreateLocalGroup; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class CreateEventGroup {
+    constructor(name, description = '', isWholeDay, from, to) {
+        this.name = name;
+        this.description = description;
+        this.isWholeDay = isWholeDay;
+        this.from = from;
+        this.to = to;
+    }
+}
+CreateEventGroup.type = '[Group] Create New Local Group';
+class CreateLocalGroup {
+    constructor(name, description) {
+        this.name = name;
+        this.description = description;
+    }
+}
+CreateLocalGroup.type = '[Group] Create Local Group';
+
+
+/***/ }),
+
 /***/ "./src/shared/states/app-state/app-state.actions.ts":
 /*!**********************************************************!*\
   !*** ./src/shared/states/app-state/app-state.actions.ts ***!
   \**********************************************************/
-/*! exports provided: SetCurrentChannel, CreateNewChannel, SetCurrentGroup, SubscribeToGroup, CreateLocalGroup, AddMessage, SaveMessageToChannel */
+/*! exports provided: SetCurrentChannel, SetCurrentGroup, SubscribeToGroup, AddMessage, SaveMessageToChannel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SetCurrentChannel", function() { return SetCurrentChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateNewChannel", function() { return CreateNewChannel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SetCurrentGroup", function() { return SetCurrentGroup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubscribeToGroup", function() { return SubscribeToGroup; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateLocalGroup", function() { return CreateLocalGroup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddMessage", function() { return AddMessage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SaveMessageToChannel", function() { return SaveMessageToChannel; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
@@ -1721,13 +1818,6 @@ class SetCurrentChannel {
     }
 }
 SetCurrentChannel.type = '[App State] Set CurrentChannel';
-class CreateNewChannel {
-    constructor(name, participantsIds = []) {
-        this.name = name;
-        this.participantsIds = participantsIds;
-    }
-}
-CreateNewChannel.type = '[App State] Create new Channel';
 class SetCurrentGroup {
     constructor(groupId) {
         this.groupId = groupId;
@@ -1740,13 +1830,6 @@ class SubscribeToGroup {
     }
 }
 SubscribeToGroup.type = '[App State] Subscribe to Group';
-class CreateLocalGroup {
-    constructor(name, description) {
-        this.name = name;
-        this.description = description;
-    }
-}
-CreateLocalGroup.type = '[App State] Create Local Group';
 class AddMessage {
     constructor(content) {
         this.content = content;
@@ -1783,6 +1866,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_state_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-state.actions */ "./src/shared/states/app-state/app-state.actions.ts");
 /* harmony import */ var _entities_message__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../entities/message */ "./src/shared/entities/message.ts");
 /* harmony import */ var _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../enums/group-type.enum */ "./src/shared/enums/group-type.enum.ts");
+/* harmony import */ var _actions_group_actions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./actions/group.actions */ "./src/shared/states/app-state/actions/group.actions.ts");
+/* harmony import */ var _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./actions/channel.actions */ "./src/shared/states/app-state/actions/channel.actions.ts");
+
+
 
 
 
@@ -1954,7 +2041,7 @@ let AppState = class AppState {
             uiState: state.uiState,
             dataStore: state.dataStore
         });
-        ctx.dispatch(new _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["CreateNewChannel"]('Allgemein'));
+        ctx.dispatch(new _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewChannel"]('Allgemein'));
     }
     addMessage(ctx, action) {
         const state = ctx.getState();
@@ -1985,9 +2072,9 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
 ], AppState.prototype, "setCurrentChannel", null);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_app_state_actions__WEBPACK_IMPORTED_MODULE_6__["CreateNewChannel"]),
+    Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewChannel"]),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["CreateNewChannel"]]),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewChannel"]]),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
 ], AppState.prototype, "createNewChannel", null);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2003,9 +2090,9 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
 ], AppState.prototype, "subscribeToGroup", null);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_app_state_actions__WEBPACK_IMPORTED_MODULE_6__["CreateLocalGroup"]),
+    Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_actions_group_actions__WEBPACK_IMPORTED_MODULE_9__["CreateLocalGroup"]),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["CreateLocalGroup"]]),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _actions_group_actions__WEBPACK_IMPORTED_MODULE_9__["CreateLocalGroup"]]),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
 ], AppState.prototype, "createLocalGroup", null);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
