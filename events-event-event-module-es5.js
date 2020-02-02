@@ -258,51 +258,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/events/event/event.page.scss")).default]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], EventPage);
     /***/
-  },
-
-  /***/
-  "./src/shared/enums/event-hint.enum.ts":
-  /*!*********************************************!*\
-    !*** ./src/shared/enums/event-hint.enum.ts ***!
-    \*********************************************/
-
-  /*! exports provided: EventHint */
-
-  /***/
-  function srcSharedEnumsEventHintEnumTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "EventHint", function () {
-      return EventHint;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-
-    var EventHint;
-
-    (function (EventHint) {
-      EventHint[EventHint["Without"] = 0] = "Without";
-      EventHint[EventHint["AtTheEventTime"] = 1] = "AtTheEventTime";
-      EventHint[EventHint["FiveMinutesBefore"] = 2] = "FiveMinutesBefore";
-      EventHint[EventHint["TenMinutesBefore"] = 3] = "TenMinutesBefore";
-      EventHint[EventHint["FifteenMinutesBefore"] = 4] = "FifteenMinutesBefore";
-      EventHint[EventHint["ThirtyMinutesBefore"] = 5] = "ThirtyMinutesBefore";
-      EventHint[EventHint["OneHoureBefore"] = 6] = "OneHoureBefore";
-      EventHint[EventHint["TwoHoureBefore"] = 7] = "TwoHoureBefore";
-      EventHint[EventHint["OneDayBefore"] = 8] = "OneDayBefore";
-      EventHint[EventHint["TwoDayBefore"] = 9] = "TwoDayBefore";
-      EventHint[EventHint["OneWeekBefore"] = 10] = "OneWeekBefore";
-    })(EventHint || (EventHint = {}));
-    /***/
-
   }
 }]);
 //# sourceMappingURL=events-event-event-module-es5.js.map

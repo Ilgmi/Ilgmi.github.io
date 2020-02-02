@@ -186,6 +186,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/modals/create-channel-modal/create-channel-modal.component.html":
+  /*!***********************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modals/create-channel-modal/create-channel-modal.component.html ***!
+    \***********************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppModalsCreateChannelModalCreateChannelModalComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\n    <ion-toolbar>\n        <ion-title>Channel erstellen</ion-title>\n    </ion-toolbar>\n    <ion-toolbar>\n        <ion-buttons slot=\"secondary\">\n            <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n        </ion-buttons>\n        <ion-buttons slot=\"primary\">\n            <ion-button [disabled]=\"createChannelForm.invalid\" (click)=\"createChannel()\">Hinzufügen</ion-button>\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n<ion-content fullscreen=\"true\">\n    <form [formGroup]=\"createChannelForm\">\n        <ion-grid>\n            <ion-row>\n                <ion-col>\n                    <ion-item>\n                        <ion-label>Name:</ion-label>\n                        <ion-input id=\"channel-name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\"></ion-input>\n                    </ion-item>\n                    <ion-item>\n                        <ion-label>Privater Channel</ion-label>\n                        <ion-toggle formControlName=\"isPrivate\" id=\"channel-is-private\"></ion-toggle>\n                    </ion-item>\n                </ion-col>\n            </ion-row>\n            <ion-row>\n                <ion-col>\n                    <ion-item-divider></ion-item-divider>\n                    <ion-item>\n                        <ion-label>Event</ion-label>\n                        <ion-toggle id=\"channel-has-event\" #event formControlName=\"isEvent\"></ion-toggle>\n                    </ion-item>\n                </ion-col>\n            </ion-row>\n            <ion-row *ngIf=\"event.checked\" formGroupName=\"event\">\n                <ion-col>\n                    <ion-item>\n                        <ion-label>Ganztägig</ion-label>\n                        <ion-toggle id=\"channel-is-whole-day\" #wholeDay formControlName=\"isWholeDay\"></ion-toggle>\n                    </ion-item>\n                    <ion-item>\n                        <ion-label>Beginn</ion-label>\n                        <ion-datetime id=\"channel-event-from\" formControlName=\"from\"\n                                      [pickerFormat]=\"wholeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\"\n                                      [displayFormat]=\"wholeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n                    </ion-item>\n                    <ion-item>\n                        <ion-label>Ende</ion-label>\n                        <ion-datetime id=\"channel-event-to\" formControlName=\"to\"\n                                      [pickerFormat]=\"wholeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\"\n                                      [displayFormat]=\"wholeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n                    </ion-item>\n                </ion-col>\n            </ion-row>\n            <ion-row>\n                <ion-col>\n                    <ion-item-divider></ion-item-divider>\n                    <ion-item class=\"channel-description\">\n                        <ion-textarea id=\"channel-description\" formControlName=\"description\"\n                                      placeholder=\"Beschreibung\"></ion-textarea>\n                    </ion-item>\n                </ion-col>\n            </ion-row>\n        </ion-grid>\n    </form>\n</ion-content>\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/modals/create-group-modal/create-group-modal.component.html":
   /*!*******************************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modals/create-group-modal/create-group-modal.component.html ***!
@@ -201,7 +221,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"secondary\">\n      <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n    </ion-buttons>\n    <ion-title>Gruppe erstellen</ion-title>\n    <ion-buttons slot=\"primary\">\n      <ion-button [disabled]=\"createGroupForm.invalid\" (click)=\"createGroup()\">Hinzufügen</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form [formGroup]=\"createGroupForm\">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input placeholder=\"Name\" type=\"text\" formControlName=\"name\"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-toggle #event formControlName=\"isEvent\"></ion-toggle>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"event.checked\" formGroupName=\"event\">\n        <ion-col>\n          <ion-item  >\n            <ion-label>Ganztägig</ion-label>\n            <ion-toggle #holeDay formControlName=\"isWholeDay\"></ion-toggle>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beginn</ion-label>\n            <ion-datetime formControlName=\"from\"\n                          [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDate\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Ende</ion-label>\n            <ion-datetime formControlName=\"to\"\n                          [pickerFormat]=\"holeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\" [value]=\"nowDatePlusOne\"\n                          [displayFormat]=\"holeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item class=\"group-description\" >\n            <ion-textarea formControlName=\"description\" placeholder=\"Beschreibung\"></ion-textarea>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <p>\n            Form: {{ createGroupForm.value | json }}\n          </p>\n          <p>\n            Form Status: {{ createGroupForm.status }}\n          </p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n";
+    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-title>Gruppe erstellen</ion-title>\n  </ion-toolbar>\n  <ion-toolbar>\n    <ion-buttons slot=\"secondary\">\n      <ion-button (click)=\"dismissModal()\">Abbrechen</ion-button>\n    </ion-buttons>\n    <ion-buttons slot=\"primary\">\n      <ion-button [disabled]=\"createGroupForm.invalid\" (click)=\"createGroup()\">Hinzufügen</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <form [formGroup]=\"createGroupForm\">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label>Name:</ion-label>\n            <ion-input id=\"group-name\" placeholder=\"Name\" type=\"text\" formControlName=\"name\"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label>Private Gruppe</ion-label>\n            <ion-toggle formControlName=\"isPrivate\" id=\"group-is-private\"></ion-toggle>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item>\n            <ion-label>Event</ion-label>\n            <ion-toggle id=\"group-has-event\" #event formControlName=\"isEvent\"></ion-toggle>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"event.checked\" formGroupName=\"event\">\n        <ion-col>\n          <ion-item  >\n            <ion-label>Ganztägig</ion-label>\n            <ion-toggle id=\"group-is-whole-day\" #wholeDay formControlName=\"isWholeDay\"></ion-toggle>\n          </ion-item>\n          <ion-item>\n            <ion-label>Beginn</ion-label>\n            <ion-datetime id=\"group-event-from\" formControlName=\"from\"\n                          [pickerFormat]=\"wholeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\"\n                          [displayFormat]=\"wholeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Ende</ion-label>\n            <ion-datetime id=\"group-event-to\" formControlName=\"to\"\n                          [pickerFormat]=\"wholeDay.checked ? 'DDMMYYYY' : 'DDMMYYYYHHmm'\"\n                          [displayFormat]=\"wholeDay.checked ? 'DD.MM.YYYY' : 'DD.MM.YYYY HH:mm'\"></ion-datetime>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row >\n        <ion-col>\n          <ion-item-divider></ion-item-divider>\n          <ion-item class=\"group-description\" >\n            <ion-textarea id=\"group-description\" formControlName=\"description\" placeholder=\"Beschreibung\"></ion-textarea>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.html":
+  /*!***********************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.html ***!
+    \***********************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppModalsSubscribeToChannelModalSubscribeToChannelModalComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\n  <ion-toolbar>\n    <ion-title>Channels</ion-title>\n  </ion-toolbar>\n  <ion-toolbar>\n    <ion-buttons slot=\"secondary\">\n      <ion-button class=\"btn-cancel\"  (click)=\"dismissModal()\">Abbrechen</ion-button>\n    </ion-buttons>\n\n    <ion-buttons slot=\"primary\">\n      <ion-button class=\"btn-create\" (click)=\"createNewChannel()\">Neuen Channel erstellen</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content fullscreen=\"true\">\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-searchbar id=\"search-group\" (ionInput)=\"filterList($event)\"></ion-searchbar>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-list id=\"subscribe-group-list\">\n          <ion-item *ngFor=\"let groupInfo of filteredGroups\">\n            <ion-avatar slot=\"start\">\n\n            </ion-avatar>\n            <ion-label>\n              <h2>{{groupInfo.name}}</h2>\n            </ion-label>\n            <ion-button shape=\"round\" fill=\"clear\" size=\"large\" (click)=\"subscribeToChannel(groupInfo.id)\">\n              <ion-icon name=\"add-circle-outline\"></ion-icon>\n            </ion-button>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n";
     /***/
   },
 
@@ -221,7 +261,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\r\n  <ion-toolbar>\r\n\r\n    <ion-title>Einer Gruppe beitreten</ion-title>\r\n  </ion-toolbar>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"secondary\">\r\n      <ion-button  (click)=\"dismissModal()\">Abbrechen</ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"createNewGroup()\">Neue Gruppe erstellen</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen=\"true\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-searchbar (ionInput)=\"filterList($event)\"></ion-searchbar>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-list>\r\n          <ion-item *ngFor=\"let groupInfo of filteredGroups\">\r\n            <ion-avatar slot=\"start\">\r\n\r\n            </ion-avatar>\r\n            <ion-label>\r\n              <h2>{{groupInfo.name}}</h2>\r\n            </ion-label>\r\n            <ion-button shape=\"round\" fill=\"clear\" size=\"large\" (click)=\"subscribeToGroup(groupInfo.id)\">\r\n              <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header translucent=\"true\">\r\n  <ion-toolbar>\r\n\r\n    <ion-title>Gruppen</ion-title>\r\n  </ion-toolbar>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"secondary\">\r\n      <ion-button class=\"btn-cancel\"  (click)=\"dismissModal()\">Abbrechen</ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button class=\"btn-create\" (click)=\"createNewGroup()\">Neue Gruppe erstellen</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen=\"true\">\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-searchbar id=\"search-group\" (ionInput)=\"filterList($event)\"></ion-searchbar>\r\n      </ion-col>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-list id=\"subscribe-group-list\">\r\n          <ion-item *ngFor=\"let groupInfo of filteredGroups\">\r\n            <ion-avatar slot=\"start\">\r\n\r\n            </ion-avatar>\r\n            <ion-label>\r\n              <h2>{{groupInfo.name}}</h2>\r\n            </ion-label>\r\n            <ion-button shape=\"round\" fill=\"clear\" size=\"large\" (click)=\"subscribeToGroup(groupInfo.id)\">\r\n              <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -241,7 +281,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar>\n    <ion-searchbar></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n<ion-grid>\n  <ion-row>\n    <ion-col>\n      Channels\n    </ion-col>\n    <ion-col>\n      <ion-button size=\"small\" shape=\"round\" fill=\"outline\">\n        <ion-icon\n                  name=\"add-circle-outline\"></ion-icon>\n      </ion-button>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-list>\n        <ion-menu-toggle *ngFor=\"let channel of subscribedChannels$ | async; trackBy:identifyChannel\" auto-hide=\"false\">\n          <ion-item\n                  [class.is-active]=\"channel.id === (currentChannel$|async).id\"\n                  (click)=\"selectChannel(channel)\"\n                  [routerDirection]=\"'root'\"\n                  [routerLink]=\"'chat'\" >\n            <ion-icon name=\"Home\" slot=\"start\"></ion-icon>\n            <ion-label>\n              {{channel.name}}\n            </ion-label>\n          </ion-item>\n        </ion-menu-toggle>\n      </ion-list>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-button>Add</ion-button>\n    </ion-col>\n  </ion-row>\n</ion-grid>\n";
+    __webpack_exports__["default"] = "<ion-grid>\n  <ion-row>\n    <ion-col>\n      <ion-searchbar></ion-searchbar>\n    </ion-col>\n  </ion-row>\n  <ion-row class=\"ion-align-items-center\">\n    <ion-col>\n      <ion-label>Channels</ion-label>\n    </ion-col>\n    <ion-col>\n      <ion-button id=\"create-channel\" fill=\"clear\" (click)=\"presentCreateChannelModal()\">\n        <ion-icon name=\"add\"></ion-icon>\n      </ion-button>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-list id=\"menu-channel-list\">\n        <ion-menu-toggle *ngFor=\"let channel of subscribedChannels$ | async; trackBy:identifyChannel\" auto-hide=\"false\">\n          <ion-item\n                  [class.is-active]=\"channel.id === (currentChannel$|async).id\"\n                  (click)=\"selectChannel(channel)\"\n                  [routerDirection]=\"'root'\"\n                  [routerLink]=\"'chat'\" >\n            <ion-icon name=\"Home\" slot=\"start\"></ion-icon>\n            <ion-label>\n              {{channel.name}}\n            </ion-label>\n          </ion-item>\n        </ion-menu-toggle>\n      </ion-list>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-button id=\"subscribe-to-channel\" fill=\"clear\" (click)=\"presentSubscribeToChannelModal()\">\n        Channel hinzufügen\n      </ion-button>\n    </ion-col>\n  </ion-row>\n</ion-grid>\n";
     /***/
   },
 
@@ -261,7 +301,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-grid>\n  <ion-row>\n    <ion-col>\n      <h3>Gruppen</h3>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-list>\n        <ion-menu-toggle *ngFor=\"let group of subscribedGroups$ | async; trackBy:identifyGroup\"\n                         auto-hide=\"false\">\n          <ion-item\n                  [class.is-active]=\"group.id === (currentGroup$ | async).id\"\n                  (click)=\"selectGroup(group)\"\n                  [routerDirection]=\"'root'\"\n                  [routerLink]=\"'chat'\">\n            <ion-icon name=\"Home\" slot=\"start\"></ion-icon>\n            <ion-label>{{group.name}}</ion-label>\n          </ion-item>\n        </ion-menu-toggle>\n      </ion-list>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-button (click)=\"presentSubscribeToGroupModal()\">Add</ion-button>\n    </ion-col>\n  </ion-row>\n</ion-grid>\n";
+    __webpack_exports__["default"] = "<ion-grid>\n  <ion-row class=\"ion-align-items-center\">\n    <ion-col offset=\"2\">\n      <h3>Gruppen</h3>\n    </ion-col>\n    <ion-col>\n      <ion-button id=\"create-group\" fill=\"clear\" (click)=\"presentCreateGroupModal()\">\n        <ion-icon name=\"add\"></ion-icon>\n      </ion-button>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-list id=\"menu-group-list\">\n        <ion-menu-toggle *ngFor=\"let group of subscribedGroups$ | async; trackBy:identifyGroup\"\n                         auto-hide=\"false\">\n          <ion-item\n                  [class.is-active]=\"group.id === (currentGroup$ | async).id\"\n                  (click)=\"selectGroup(group)\"\n                  [routerDirection]=\"'root'\"\n                  [routerLink]=\"'chat'\">\n            <ion-icon name=\"Home\" slot=\"start\"></ion-icon>\n            <ion-label>{{group.name}}</ion-label>\n          </ion-item>\n        </ion-menu-toggle>\n      </ion-list>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-button id=\"subscribe-to-group\" fill=\"clear\" (click)=\"presentSubscribeToGroupModal()\">\n        Gruppe beitreten\n      </ion-button>\n    </ion-col>\n  </ion-row>\n</ion-grid>\n";
     /***/
   },
 
@@ -1275,6 +1315,168 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/modals/create-channel-modal/create-channel-modal.component.scss":
+  /*!*********************************************************************************!*\
+    !*** ./src/app/modals/create-channel-modal/create-channel-modal.component.scss ***!
+    \*********************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppModalsCreateChannelModalCreateChannelModalComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZGFscy9jcmVhdGUtY2hhbm5lbC1tb2RhbC9jcmVhdGUtY2hhbm5lbC1tb2RhbC5jb21wb25lbnQuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/modals/create-channel-modal/create-channel-modal.component.ts":
+  /*!*******************************************************************************!*\
+    !*** ./src/app/modals/create-channel-modal/create-channel-modal.component.ts ***!
+    \*******************************************************************************/
+
+  /*! exports provided: CreateChannelModalComponent */
+
+  /***/
+  function srcAppModalsCreateChannelModalCreateChannelModalComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CreateChannelModalComponent", function () {
+      return CreateChannelModalComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/dist/fesm5.js");
+    /* harmony import */
+
+
+    var _ngxs_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @ngxs/store */
+    "./node_modules/@ngxs/store/fesm2015/ngxs-store.js");
+    /* harmony import */
+
+
+    var _shared_states_app_state_actions_channel_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../../../shared/states/app-state/actions/channel.actions */
+    "./src/shared/states/app-state/actions/channel.actions.ts");
+
+    var CreateChannelModalComponent =
+    /*#__PURE__*/
+    function () {
+      function CreateChannelModalComponent(modalController, store) {
+        _classCallCheck(this, CreateChannelModalComponent);
+
+        this.modalController = modalController;
+        this.store = store;
+        this.createChannelForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+          name: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(100)]),
+          description: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(250)),
+          isPrivate: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](false),
+          isEvent: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](false),
+          event: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            isWholeDay: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](true),
+            from: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date().toISOString()),
+            to: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date(Date.now() + 60 * 60 * 1000).toISOString())
+          }, this.dateLessThan('from', 'to'))
+        });
+      }
+
+      _createClass(CreateChannelModalComponent, [{
+        key: "dateLessThan",
+        value: function dateLessThan(from, to) {
+          return function (group) {
+            var f = new Date(group.get(from).value);
+            var t = new Date(group.get(to).value);
+            console.log(f.getTime(), t.getTime());
+
+            if (f.getTime() > t.getTime()) {
+              return {
+                dates: 'Date from should be less than Date to'
+              };
+            }
+          };
+        }
+      }, {
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "dismissModal",
+        value: function dismissModal() {
+          this.modalController.dismiss({
+            dismissed: true
+          });
+        }
+      }, {
+        key: "createChannel",
+        value: function createChannel() {
+          var channelData = this.createChannelForm.getRawValue();
+
+          if (channelData.isEvent) {
+            this.store.dispatch(new _shared_states_app_state_actions_channel_actions__WEBPACK_IMPORTED_MODULE_5__["CreateNewEventChannel"](channelData.name, channelData.description, channelData.isPrivate, channelData.event.isWholeDay, channelData.event.from, channelData.event.to));
+          } else {
+            this.store.dispatch(new _shared_states_app_state_actions_channel_actions__WEBPACK_IMPORTED_MODULE_5__["CreateNewChannel"](channelData.name, channelData.description, channelData.isPrivate));
+          }
+
+          this.modalController.dismiss({
+            dismissed: false
+          });
+        }
+      }]);
+
+      return CreateChannelModalComponent;
+    }();
+
+    CreateChannelModalComponent.ctorParameters = function () {
+      return [{
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]
+      }, {
+        type: _ngxs_store__WEBPACK_IMPORTED_MODULE_4__["Store"]
+      }];
+    };
+
+    CreateChannelModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-create-channel-modal',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./create-channel-modal.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/modals/create-channel-modal/create-channel-modal.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./create-channel-modal.component.scss */
+      "./src/app/modals/create-channel-modal/create-channel-modal.component.scss")).default]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"], _ngxs_store__WEBPACK_IMPORTED_MODULE_4__["Store"]])], CreateChannelModalComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/modals/create-group-modal/create-group-modal.component.scss":
   /*!*****************************************************************************!*\
     !*** ./src/app/modals/create-group-modal/create-group-modal.component.scss ***!
@@ -1360,12 +1562,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.store = store;
         this.createGroupForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
           name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(100)]),
+          isPrivate: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](false),
           description: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(250)),
           isEvent: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](false),
           event: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
             isWholeDay: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](true),
             from: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](new Date().toISOString()),
-            to: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](new Date(Date.now() + 60 * 60 * 1000).toISOString())
+            to: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](new Date(Date.now() + 3600000).toISOString())
           }, this.dateLessThan('from', 'to'))
         });
       }
@@ -1395,7 +1598,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (group.isEvent) {
             var event = group.event;
-            this.store.dispatch(new _shared_states_app_state_actions_group_actions__WEBPACK_IMPORTED_MODULE_5__["CreateEventGroup"](group.name, group.description, event.isWholeDay, event.from, event.to));
+            this.store.dispatch(new _shared_states_app_state_actions_group_actions__WEBPACK_IMPORTED_MODULE_5__["CreateEventGroup"](group.name, group.description, group.isPrivate, event.isWholeDay, event.from, event.to));
           } else {
             this.store.dispatch(new _shared_states_app_state_actions_group_actions__WEBPACK_IMPORTED_MODULE_5__["CreateLocalGroup"](group.name, group.description));
           }
@@ -1497,17 +1700,244 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ./create-channel-modal/create-channel-modal.component */
+    "./src/app/modals/create-channel-modal/create-channel-modal.component.ts");
+    /* harmony import */
+
+
+    var _subscribe_to_channel_modal_subscribe_to_channel_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./subscribe-to-channel-modal/subscribe-to-channel-modal.component */
+    "./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.ts");
 
     var ModalsModule = function ModalsModule() {
       _classCallCheck(this, ModalsModule);
     };
 
     ModalsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__["SubscribeToGroupModalComponent"], _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_4__["CreateGroupModalComponent"]],
+      declarations: [_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__["SubscribeToGroupModalComponent"], _subscribe_to_channel_modal_subscribe_to_channel_modal_component__WEBPACK_IMPORTED_MODULE_8__["SubscribeToChannelModalComponent"], _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_4__["CreateGroupModalComponent"], _create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_7__["CreateChannelModalComponent"]],
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"]],
-      exports: [_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__["SubscribeToGroupModalComponent"], _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_4__["CreateGroupModalComponent"]],
-      entryComponents: [_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__["SubscribeToGroupModalComponent"], _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_4__["CreateGroupModalComponent"]]
+      exports: [_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__["SubscribeToGroupModalComponent"], _subscribe_to_channel_modal_subscribe_to_channel_modal_component__WEBPACK_IMPORTED_MODULE_8__["SubscribeToChannelModalComponent"], _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_4__["CreateGroupModalComponent"], _create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_7__["CreateChannelModalComponent"]],
+      entryComponents: [_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_5__["SubscribeToGroupModalComponent"], _subscribe_to_channel_modal_subscribe_to_channel_modal_component__WEBPACK_IMPORTED_MODULE_8__["SubscribeToChannelModalComponent"], _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_4__["CreateGroupModalComponent"], _create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_7__["CreateChannelModalComponent"]]
     })], ModalsModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.scss":
+  /*!*********************************************************************************************!*\
+    !*** ./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.scss ***!
+    \*********************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppModalsSubscribeToChannelModalSubscribeToChannelModalComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZGFscy9zdWJzY3JpYmUtdG8tY2hhbm5lbC1tb2RhbC9zdWJzY3JpYmUtdG8tY2hhbm5lbC1tb2RhbC5jb21wb25lbnQuc2NzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.ts":
+  /*!*******************************************************************************************!*\
+    !*** ./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.ts ***!
+    \*******************************************************************************************/
+
+  /*! exports provided: SubscribeToChannelModalComponent */
+
+  /***/
+  function srcAppModalsSubscribeToChannelModalSubscribeToChannelModalComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SubscribeToChannelModalComponent", function () {
+      return SubscribeToChannelModalComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _ngxs_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @ngxs/store */
+    "./node_modules/@ngxs/store/fesm2015/ngxs-store.js");
+    /* harmony import */
+
+
+    var _shared_states_app_state_app_state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../shared/states/app-state/app-state */
+    "./src/shared/states/app-state/app-state.ts");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/dist/fesm5.js");
+    /* harmony import */
+
+
+    var _create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../create-channel-modal/create-channel-modal.component */
+    "./src/app/modals/create-channel-modal/create-channel-modal.component.ts");
+    /* harmony import */
+
+
+    var _shared_states_app_state_actions_channel_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../../../shared/states/app-state/actions/channel.actions */
+    "./src/shared/states/app-state/actions/channel.actions.ts");
+
+    var SubscribeToChannelModalComponent =
+    /*#__PURE__*/
+    function () {
+      function SubscribeToChannelModalComponent(store, modalController) {
+        _classCallCheck(this, SubscribeToChannelModalComponent);
+
+        this.store = store;
+        this.modalController = modalController;
+      }
+
+      _createClass(SubscribeToChannelModalComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this3 = this;
+
+          this.notSubscribedChannels$.subscribe(function (x) {
+            _this3.filteredGroups = x;
+            _this3.channels = x;
+          });
+        }
+      }, {
+        key: "filterList",
+        value: function filterList(event) {
+          this.filteredGroups = this.channels;
+
+          if (!event.detail && !event.detail.target) {
+            return;
+          }
+
+          var search = event.detail.target.value;
+
+          if (search) {
+            return;
+          }
+
+          this.filteredGroups = this.filteredGroups.filter(function (channel) {
+            if (channel && search) {
+              return channel.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
+            }
+          });
+        }
+      }, {
+        key: "subscribeToChannel",
+        value: function subscribeToChannel(channelId) {
+          this.store.dispatch(new _shared_states_app_state_actions_channel_actions__WEBPACK_IMPORTED_MODULE_7__["SubscribeToChannel"](channelId));
+          this.dismissModal();
+        }
+      }, {
+        key: "dismissModal",
+        value: function dismissModal() {
+          this.modalController.dismiss();
+        }
+      }, {
+        key: "createNewChannel",
+        value: function createNewChannel() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee() {
+            var modal, data;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return this.modalController.create({
+                      component: _create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_6__["CreateChannelModalComponent"]
+                    });
+
+                  case 2:
+                    modal = _context.sent;
+                    _context.next = 5;
+                    return modal.present();
+
+                  case 5:
+                    _context.next = 7;
+                    return modal.onDidDismiss();
+
+                  case 7:
+                    data = _context.sent;
+
+                    if (data.data.dismissed) {
+                      _context.next = 12;
+                      break;
+                    }
+
+                    _context.next = 11;
+                    return new Promise(function (resolve) {
+                      return setTimeout(resolve, 300);
+                    });
+
+                  case 11:
+                    this.dismissModal();
+
+                  case 12:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+        }
+      }]);
+
+      return SubscribeToChannelModalComponent;
+    }();
+
+    SubscribeToChannelModalComponent.ctorParameters = function () {
+      return [{
+        type: _ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Store"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ModalController"]
+      }];
+    };
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Select"])(_shared_states_app_state_app_state__WEBPACK_IMPORTED_MODULE_3__["AppState"].notSubscribedChannels), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", rxjs__WEBPACK_IMPORTED_MODULE_4__["Observable"])], SubscribeToChannelModalComponent.prototype, "notSubscribedChannels$", void 0);
+    SubscribeToChannelModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-subscribe-to-channel-modal',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./subscribe-to-channel-modal.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./subscribe-to-channel-modal.component.scss */
+      "./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.scss")).default]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Store"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ModalController"]])], SubscribeToChannelModalComponent);
     /***/
   },
 
@@ -1612,11 +2042,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SubscribeToGroupModalComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this3 = this;
+          var _this4 = this;
 
           this.notSubscribedGroups$.subscribe(function (x) {
-            _this3.filteredGroups = x;
-            _this3.groups = x;
+            _this4.filteredGroups = x;
+            _this4.groups = x;
           });
         }
       }, {
@@ -1656,35 +2086,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function createNewGroup() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee() {
+          regeneratorRuntime.mark(function _callee2() {
             var modal, data;
-            return regeneratorRuntime.wrap(function _callee$(_context) {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
               while (1) {
-                switch (_context.prev = _context.next) {
+                switch (_context2.prev = _context2.next) {
                   case 0:
-                    _context.next = 2;
+                    _context2.next = 2;
                     return this.modalController.create({
                       component: _create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_7__["CreateGroupModalComponent"]
                     });
 
                   case 2:
-                    modal = _context.sent;
-                    _context.next = 5;
+                    modal = _context2.sent;
+                    _context2.next = 5;
                     return modal.present();
 
                   case 5:
-                    _context.next = 7;
+                    _context2.next = 7;
                     return modal.onDidDismiss();
 
                   case 7:
-                    data = _context.sent;
+                    data = _context2.sent;
 
                     if (data.data.dismissed) {
-                      _context.next = 12;
+                      _context2.next = 12;
                       break;
                     }
 
-                    _context.next = 11;
+                    _context2.next = 11;
                     return new Promise(function (resolve) {
                       return setTimeout(resolve, 300);
                     });
@@ -1694,10 +2124,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 12:
                   case "end":
-                    return _context.stop();
+                    return _context2.stop();
                 }
               }
-            }, _callee, this);
+            }, _callee2, this);
           }));
         }
       }]);
@@ -1801,14 +2231,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _shared_states_app_state_app_state_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../../../shared/states/app-state/app-state.actions */
     "./src/shared/states/app-state/app-state.actions.ts");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/dist/fesm5.js");
+    /* harmony import */
+
+
+    var _modals_subscribe_to_channel_modal_subscribe_to_channel_modal_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../../modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component */
+    "./src/app/modals/subscribe-to-channel-modal/subscribe-to-channel-modal.component.ts");
+    /* harmony import */
+
+
+    var _modals_create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ../../modals/create-channel-modal/create-channel-modal.component */
+    "./src/app/modals/create-channel-modal/create-channel-modal.component.ts");
 
     var ChannelNavigationMenuComponent =
     /*#__PURE__*/
     function () {
-      function ChannelNavigationMenuComponent(store) {
+      function ChannelNavigationMenuComponent(store, modalController) {
         _classCallCheck(this, ChannelNavigationMenuComponent);
 
         this.store = store;
+        this.modalController = modalController;
       }
 
       _createClass(ChannelNavigationMenuComponent, [{
@@ -1824,6 +2273,64 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function identifyChannel(index, item) {
           return item.id;
         }
+      }, {
+        key: "presentCreateChannelModal",
+        value: function presentCreateChannelModal() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee3() {
+            var modal;
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    _context3.next = 2;
+                    return this.modalController.create({
+                      component: _modals_create_channel_modal_create_channel_modal_component__WEBPACK_IMPORTED_MODULE_8__["CreateChannelModalComponent"]
+                    });
+
+                  case 2:
+                    modal = _context3.sent;
+                    _context3.next = 5;
+                    return modal.present();
+
+                  case 5:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3, this);
+          }));
+        }
+      }, {
+        key: "presentSubscribeToChannelModal",
+        value: function presentSubscribeToChannelModal() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee4() {
+            var modal;
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    _context4.next = 2;
+                    return this.modalController.create({
+                      component: _modals_subscribe_to_channel_modal_subscribe_to_channel_modal_component__WEBPACK_IMPORTED_MODULE_7__["SubscribeToChannelModalComponent"]
+                    });
+
+                  case 2:
+                    modal = _context4.sent;
+                    _context4.next = 5;
+                    return modal.present();
+
+                  case 5:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4, this);
+          }));
+        }
       }]);
 
       return ChannelNavigationMenuComponent;
@@ -1832,6 +2339,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     ChannelNavigationMenuComponent.ctorParameters = function () {
       return [{
         type: _ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Store"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]
       }];
     };
 
@@ -1845,7 +2354,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./channel-navigation-menu.component.scss */
       "./src/app/navigation-menu/channel-navigation-menu/channel-navigation-menu.component.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])], ChannelNavigationMenuComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Store"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]])], ChannelNavigationMenuComponent);
     /***/
   },
 
@@ -1936,6 +2445,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _modals_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ../../modals/subscribe-to-group-modal/subscribe-to-group-modal.component */
     "./src/app/modals/subscribe-to-group-modal/subscribe-to-group-modal.component.ts");
+    /* harmony import */
+
+
+    var _modals_create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ../../modals/create-group-modal/create-group-modal.component */
+    "./src/app/modals/create-group-modal/create-group-modal.component.ts");
 
     var GroupNavigationMenuComponent =
     /*#__PURE__*/
@@ -1965,31 +2480,63 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function presentSubscribeToGroupModal() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee2() {
+          regeneratorRuntime.mark(function _callee5() {
             var modal;
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
               while (1) {
-                switch (_context2.prev = _context2.next) {
+                switch (_context5.prev = _context5.next) {
                   case 0:
-                    _context2.next = 2;
+                    _context5.next = 2;
                     return this.modalController.create({
                       component: _modals_subscribe_to_group_modal_subscribe_to_group_modal_component__WEBPACK_IMPORTED_MODULE_7__["SubscribeToGroupModalComponent"]
                     });
 
                   case 2:
-                    modal = _context2.sent;
-                    _context2.next = 5;
+                    modal = _context5.sent;
+                    _context5.next = 5;
                     return modal.present();
 
                   case 5:
-                    return _context2.abrupt("return", _context2.sent);
+                    return _context5.abrupt("return", _context5.sent);
 
                   case 6:
                   case "end":
-                    return _context2.stop();
+                    return _context5.stop();
                 }
               }
-            }, _callee2, this);
+            }, _callee5, this);
+          }));
+        }
+      }, {
+        key: "presentCreateGroupModal",
+        value: function presentCreateGroupModal() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee6() {
+            var modal;
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    _context6.next = 2;
+                    return this.modalController.create({
+                      component: _modals_create_group_modal_create_group_modal_component__WEBPACK_IMPORTED_MODULE_8__["CreateGroupModalComponent"]
+                    });
+
+                  case 2:
+                    modal = _context6.sent;
+                    _context6.next = 5;
+                    return modal.present();
+
+                  case 5:
+                    return _context6.abrupt("return", _context6.sent);
+
+                  case 6:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6, this);
           }));
         }
       }]);
@@ -2371,11 +2918,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var Channel = function Channel(channelId, name) {
       _classCallCheck(this, Channel);
 
+      this.description = '';
+      this.isPrivate = false;
+      this.eventId = null;
       this.messageIds = [];
       this.participantIds = [];
       this.currentMessage = '';
       this.id = channelId;
       this.name = name;
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/shared/entities/event.ts":
+  /*!**************************************!*\
+    !*** ./src/shared/entities/event.ts ***!
+    \**************************************/
+
+  /*! exports provided: Event */
+
+  /***/
+  function srcSharedEntitiesEventTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Event", function () {
+      return Event;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var Event = function Event() {
+      _classCallCheck(this, Event);
+
+      for (var _len = arguments.length, initData = new Array(_len), _key = 0; _key < _len; _key++) {
+        initData[_key] = arguments[_key];
+      }
+
+      Object.assign.apply(Object, [this].concat(initData));
     };
     /***/
 
@@ -2421,6 +3010,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.channelIds = [];
       this.participantIds = [];
       this.description = '';
+      this.isPrivate = false;
+      this.eventId = null;
       this.id = id;
       this.groupType = groupType;
       this.name = name;
@@ -2504,6 +3095,51 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/shared/enums/event-hint.enum.ts":
+  /*!*********************************************!*\
+    !*** ./src/shared/enums/event-hint.enum.ts ***!
+    \*********************************************/
+
+  /*! exports provided: EventHint */
+
+  /***/
+  function srcSharedEnumsEventHintEnumTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "EventHint", function () {
+      return EventHint;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var EventHint;
+
+    (function (EventHint) {
+      EventHint[EventHint["Without"] = 0] = "Without";
+      EventHint[EventHint["AtTheEventTime"] = 1] = "AtTheEventTime";
+      EventHint[EventHint["FiveMinutesBefore"] = 2] = "FiveMinutesBefore";
+      EventHint[EventHint["TenMinutesBefore"] = 3] = "TenMinutesBefore";
+      EventHint[EventHint["FifteenMinutesBefore"] = 4] = "FifteenMinutesBefore";
+      EventHint[EventHint["ThirtyMinutesBefore"] = 5] = "ThirtyMinutesBefore";
+      EventHint[EventHint["OneHoureBefore"] = 6] = "OneHoureBefore";
+      EventHint[EventHint["TwoHoureBefore"] = 7] = "TwoHoureBefore";
+      EventHint[EventHint["OneDayBefore"] = 8] = "OneDayBefore";
+      EventHint[EventHint["TwoDayBefore"] = 9] = "TwoDayBefore";
+      EventHint[EventHint["OneWeekBefore"] = 10] = "OneWeekBefore";
+    })(EventHint || (EventHint = {}));
+    /***/
+
+  },
+
+  /***/
   "./src/shared/enums/group-type.enum.ts":
   /*!*********************************************!*\
     !*** ./src/shared/enums/group-type.enum.ts ***!
@@ -2546,7 +3182,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/shared/states/app-state/actions/channel.actions.ts ***!
     \****************************************************************/
 
-  /*! exports provided: CreateNewChannel */
+  /*! exports provided: CreateNewChannel, CreateNewEventChannel, SubscribeToChannel */
 
   /***/
   function srcSharedStatesAppStateActionsChannelActionsTs(module, __webpack_exports__, __webpack_require__) {
@@ -2559,6 +3195,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     __webpack_require__.d(__webpack_exports__, "CreateNewChannel", function () {
       return CreateNewChannel;
     });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CreateNewEventChannel", function () {
+      return CreateNewEventChannel;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SubscribeToChannel", function () {
+      return SubscribeToChannel;
+    });
     /* harmony import */
 
 
@@ -2567,15 +3215,48 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/tslib/tslib.es6.js");
 
     var CreateNewChannel = function CreateNewChannel(name) {
-      var participantsIds = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+      var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var isPrivate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var participantsIds = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
 
       _classCallCheck(this, CreateNewChannel);
 
       this.name = name;
+      this.description = description;
+      this.isPrivate = isPrivate;
       this.participantsIds = participantsIds;
     };
 
-    CreateNewChannel.type = '[App State] Create new Channel';
+    CreateNewChannel.type = '[Channel] create new channel';
+
+    var CreateNewEventChannel = function CreateNewEventChannel(name) {
+      var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var isPrivate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var isWholeDay = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+      var from = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : Date.now();
+      var to = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : Date.now() + 3600000;
+      var participantsIds = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : [];
+
+      _classCallCheck(this, CreateNewEventChannel);
+
+      this.name = name;
+      this.description = description;
+      this.isPrivate = isPrivate;
+      this.isWholeDay = isWholeDay;
+      this.from = from;
+      this.to = to;
+      this.participantsIds = participantsIds;
+    };
+
+    CreateNewEventChannel.type = '[Channel] Create channel with event';
+
+    var SubscribeToChannel = function SubscribeToChannel(id) {
+      _classCallCheck(this, SubscribeToChannel);
+
+      this.id = id;
+    };
+
+    SubscribeToChannel.type = '[Channel] Subscribe to channel';
     /***/
   },
 
@@ -2613,14 +3294,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var CreateEventGroup = function CreateEventGroup(name) {
       var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-      var isWholeDay = arguments.length > 2 ? arguments[2] : undefined;
-      var from = arguments.length > 3 ? arguments[3] : undefined;
-      var to = arguments.length > 4 ? arguments[4] : undefined;
+      var isPrivate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var isWholeDay = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+      var from = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : Date.now();
+      var to = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : Date.now() + 3600000;
 
       _classCallCheck(this, CreateEventGroup);
 
       this.name = name;
       this.description = description;
+      this.isPrivate = isPrivate;
       this.isWholeDay = isWholeDay;
       this.from = from;
       this.to = to;
@@ -2628,11 +3311,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     CreateEventGroup.type = '[Group] Create New Local Group';
 
-    var CreateLocalGroup = function CreateLocalGroup(name, description) {
+    var CreateLocalGroup = function CreateLocalGroup(name) {
+      var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var isPrivate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
       _classCallCheck(this, CreateLocalGroup);
 
       this.name = name;
       this.description = description;
+      this.isPrivate = isPrivate;
     };
 
     CreateLocalGroup.type = '[Group] Create Local Group';
@@ -2819,6 +3506,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ./actions/channel.actions */
     "./src/shared/states/app-state/actions/channel.actions.ts");
+    /* harmony import */
+
+
+    var _entities_event__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! ../../entities/event */
+    "./src/shared/entities/event.ts");
+    /* harmony import */
+
+
+    var _enums_event_hint_enum__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ../../enums/event-hint.enum */
+    "./src/shared/enums/event-hint.enum.ts");
+    /* harmony import */
+
+
+    var _view_models_channel_info_vm__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! ../../view-models/channel-info-vm */
+    "./src/shared/view-models/channel-info-vm.ts");
 
     var constUser = new _entities_user__WEBPACK_IMPORTED_MODULE_5__["User"]('e51636d8-2a9d-43bf-8f67-be9c1146ec99', 'ich');
     var constUser2 = new _entities_user__WEBPACK_IMPORTED_MODULE_5__["User"]('df6ed3e6-82ed-4a1b-b75b-d9699d9ce1f5', 'Max');
@@ -2884,11 +3589,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var currentState = ctx.getState();
           var newChannel = new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.name);
+          newChannel.description = action.description;
+          newChannel.isPrivate = action.isPrivate;
           newChannel.groupId = currentState.uiState.currentGroupId;
           newChannel.participantIds.push(currentState.uiState.userId);
 
           (_newChannel$participa = newChannel.participantIds).push.apply(_newChannel$participa, _toConsumableArray(action.participantsIds));
 
+          currentState.dataStore.channels.set(newChannel.id, newChannel);
+          currentState.uiState.currentChannelId = newChannel.id;
+          ctx.patchState({
+            dataStore: currentState.dataStore,
+            uiState: currentState.uiState
+          });
+        }
+      }, {
+        key: "createNewEventChannel",
+        value: function createNewEventChannel(ctx, action) {
+          var _newChannel$participa2;
+
+          var currentState = ctx.getState();
+          var newChannel = new _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.name);
+          newChannel.description = action.description;
+          newChannel.isPrivate = action.isPrivate;
+          newChannel.groupId = currentState.uiState.currentGroupId;
+          newChannel.participantIds.push(currentState.uiState.userId);
+
+          (_newChannel$participa2 = newChannel.participantIds).push.apply(_newChannel$participa2, _toConsumableArray(action.participantsIds)); // TODO: Use Service to create Event
+
+
+          var event = new _entities_event__WEBPACK_IMPORTED_MODULE_11__["Event"]({
+            id: _tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(),
+            description: '',
+            from: action.from,
+            to: action.to,
+            isWholeDay: action.isWholeDay,
+            hintOne: _enums_event_hint_enum__WEBPACK_IMPORTED_MODULE_12__["EventHint"].Without,
+            hintTwo: _enums_event_hint_enum__WEBPACK_IMPORTED_MODULE_12__["EventHint"].Without
+          });
+          currentState.dataStore.events.set(event.id, event);
+          newChannel.eventId = event.id;
           currentState.dataStore.channels.set(newChannel.id, newChannel);
           currentState.uiState.currentChannelId = newChannel.id;
           ctx.patchState({
@@ -2932,11 +3672,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "subscribeToChannel",
+        value: function subscribeToChannel(ctx, action) {
+          var state = ctx.getState();
+          var dataStore = state.dataStore;
+          var channelToSubscribe = dataStore.channels.get(action.id);
+          channelToSubscribe.participantIds = [].concat(_toConsumableArray(channelToSubscribe.participantIds), [state.uiState.userId]);
+          ctx.patchState({
+            dataStore: dataStore
+          });
+        }
+      }, {
         key: "createLocalGroup",
         value: function createLocalGroup(ctx, action) {
           var state = ctx.getState();
           var newGroup = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.name, _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup);
           newGroup.description = action.description;
+          newGroup.isPrivate = action.isPrivate;
           newGroup.participantIds.push(state.uiState.userId);
           state.dataStore.groups.set(newGroup.id, newGroup);
           state.uiState.currentGroupId = newGroup.id;
@@ -2945,6 +3697,54 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             dataStore: state.dataStore
           });
           ctx.dispatch(new _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewChannel"]('Allgemein'));
+        }
+      }, {
+        key: "createEventGroup",
+        value: function createEventGroup(ctx, action) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee7() {
+            var state, newGroup, event;
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+              while (1) {
+                switch (_context7.prev = _context7.next) {
+                  case 0:
+                    state = ctx.getState();
+                    newGroup = new _entities_group__WEBPACK_IMPORTED_MODULE_1__["Group"](_tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(), action.name, _enums_group_type_enum__WEBPACK_IMPORTED_MODULE_8__["GroupType"].LocalGroup);
+                    newGroup.description = action.description;
+                    newGroup.isPrivate = action.isPrivate;
+                    newGroup.participantIds.push(state.uiState.userId);
+                    state.dataStore.groups.set(newGroup.id, newGroup);
+                    state.uiState.currentGroupId = newGroup.id; // TODO: Use Service to create Event
+
+                    event = {
+                      id: _tests_helpers_guid__WEBPACK_IMPORTED_MODULE_3__["Guid"].newGuid(),
+                      description: '',
+                      from: action.from,
+                      to: action.to,
+                      isWholeDay: action.isWholeDay,
+                      hintOne: _enums_event_hint_enum__WEBPACK_IMPORTED_MODULE_12__["EventHint"].Without,
+                      hintTwo: _enums_event_hint_enum__WEBPACK_IMPORTED_MODULE_12__["EventHint"].Without
+                    };
+                    state.dataStore.events.set(event.id, event);
+                    newGroup.eventId = event.id;
+                    _context7.next = 12;
+                    return ctx.patchState({
+                      uiState: state.uiState,
+                      dataStore: state.dataStore
+                    });
+
+                  case 12:
+                    // TODO: Use Service to create channel.
+                    ctx.dispatch(new _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewChannel"]('Allgemein'));
+
+                  case 13:
+                  case "end":
+                    return _context7.stop();
+                }
+              }
+            }, _callee7);
+          }));
         }
       }, {
         key: "addMessage",
@@ -3016,6 +3816,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "notSubscribedChannels",
+        value: function notSubscribedChannels(state) {
+          var userId = state.uiState.userId;
+          return Array.from(state.dataStore.channels.values()).filter(function (x) {
+            return !x.participantIds.includes(userId);
+          }).map(function (c) {
+            return new _view_models_channel_info_vm__WEBPACK_IMPORTED_MODULE_13__["ChannelInfoVm"]({
+              id: c.id,
+              name: c.name,
+              description: c.description
+            });
+          });
+        }
+      }, {
         key: "user",
         value: function user(state) {
           return state.dataStore.users.get(state.uiState.userId);
@@ -3055,9 +3869,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SetCurrentChannel"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SetCurrentChannel"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "setCurrentChannel", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewChannel"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewChannel"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "createNewChannel", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewEventChannel"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["CreateNewEventChannel"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "createNewEventChannel", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SetCurrentGroup"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SetCurrentGroup"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "setCurrentGroup", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SubscribeToGroup"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SubscribeToGroup"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "subscribeToGroup", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["SubscribeToChannel"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _actions_channel_actions__WEBPACK_IMPORTED_MODULE_10__["SubscribeToChannel"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "subscribeToChannel", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_actions_group_actions__WEBPACK_IMPORTED_MODULE_9__["CreateLocalGroup"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _actions_group_actions__WEBPACK_IMPORTED_MODULE_9__["CreateLocalGroup"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "createLocalGroup", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_actions_group_actions__WEBPACK_IMPORTED_MODULE_9__["CreateEventGroup"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _actions_group_actions__WEBPACK_IMPORTED_MODULE_9__["CreateEventGroup"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", Promise)], AppState.prototype, "createEventGroup", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_app_state_actions__WEBPACK_IMPORTED_MODULE_6__["AddMessage"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["AddMessage"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "addMessage", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Action"])(_app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SaveMessageToChannel"]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _app_state_actions__WEBPACK_IMPORTED_MODULE_6__["SaveMessageToChannel"]]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)], AppState.prototype, "updateCurrentMessage", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", _entities_channel__WEBPACK_IMPORTED_MODULE_4__["Channel"])], AppState, "currentChannel", null);
@@ -3065,6 +3882,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", Array)], AppState, "subscribedChannels", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", Array)], AppState, "subscribedGroups", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", Array)], AppState, "notSubscribedGroups", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", Array)], AppState, "notSubscribedChannels", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", _entities_user__WEBPACK_IMPORTED_MODULE_5__["User"])], AppState, "user", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", Array)], AppState, "currentChatMessages", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_ngxs_store__WEBPACK_IMPORTED_MODULE_2__["Selector"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object]), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", String)], AppState, "currentChatMessage", null);
@@ -3089,6 +3907,45 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       children: []
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], AppState);
     /***/
+  },
+
+  /***/
+  "./src/shared/view-models/channel-info-vm.ts":
+  /*!***************************************************!*\
+    !*** ./src/shared/view-models/channel-info-vm.ts ***!
+    \***************************************************/
+
+  /*! exports provided: ChannelInfoVm */
+
+  /***/
+  function srcSharedViewModelsChannelInfoVmTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ChannelInfoVm", function () {
+      return ChannelInfoVm;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var ChannelInfoVm = function ChannelInfoVm() {
+      _classCallCheck(this, ChannelInfoVm);
+
+      for (var _len2 = arguments.length, items = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        items[_key2] = arguments[_key2];
+      }
+
+      Object.assign.apply(Object, [this].concat(items));
+    };
+    /***/
+
   },
 
   /***/
